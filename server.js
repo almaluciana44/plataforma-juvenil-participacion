@@ -33,17 +33,17 @@ app.post("/api/candidatos", function (req, res) {
     estado: "Perfil de práctica académica"
   };
 
-   if (!nuevoCandidato.nombre || !nuevoCandidato.rol || !nuevoCandidato.propuesta) {
+  if (!nuevoCandidato.nombre || !nuevoCandidato.rol || !nuevoCandidato.propuesta) {
     return res.status(400).json({
       mensaje: "Faltan datos obligatorios"
     });
   }
 
-const candidatos = leerCandidatos();
-candidatos.push(nuevoCandidato);
-guardarCandidatos(candidatos);
+  const candidatos = leerCandidatos();
+  candidatos.push(nuevoCandidato);
+  guardarCandidatos(candidatos);
 
-res.status(201).json({
+  res.status(201).json({
     mensaje: "Perfil guardado correctamente",
     candidato: nuevoCandidato
   });
@@ -52,5 +52,3 @@ res.status(201).json({
 app.listen(PORT, function () {
   console.log("Servidor funcionando en http://localhost:" + PORT);
 });
-
-
