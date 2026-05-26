@@ -1,1 +1,31 @@
 []
+[
+  {
+    "id": 1779834386966,
+    "nombre": "Felipe Martinez",
+    "rol": "Transparencia Juvenil",
+    "propuesta": "Ejecución programadores para la paz 2026",
+    "estado": "Perfil de práctica académica"
+  },
+  {
+    "id": 1779834469700,
+    "nombre": "Camilo Escobar",
+    "rol": "Comunidad Digital",
+    "propuesta": "Uso de herramientas Git + GitHub + Terminal +IA",
+    "estado": "Perfil de práctica académica"
+  },
+  {
+    "id": 1779834629314,
+    "nombre": "Julian Ruales",
+    "rol": "Derecho y participación",
+    "propuesta": "Democracia + uso responsable de la información",
+    "estado": "Perfil de práctica académica"
+  },
+  {
+    "id": 1779834716963,
+    "nombre": "Monica Perez",
+    "rol": "Comunidad Digital",
+    "propuesta": "Pagina HTML para participación juvenil comunitaria",
+    "estado": "Perfil de práctica académica"
+  }
+]
