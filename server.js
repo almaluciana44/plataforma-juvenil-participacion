@@ -21,7 +21,6 @@ function guardarVotos(votos) {
 }
 
 
-
 function leerCandidatos() {
   const data = fs.readFileSync(rutaCandidatos, "utf8");
   return JSON.parse(data);
@@ -47,7 +46,7 @@ app.post("/api/candidatos", function (req, res) {
 
   if (!nuevoCandidato.nombre || !nuevoCandidato.rol || !nuevoCandidato.propuesta) {
     return res.status(400).json({
-      mensaje: "Faltan datos oblreq.igatorios"
+      mensaje: "Faltan datos obligatorios"
     });
   }
 
@@ -107,3 +106,4 @@ app.post("/api/votos", function (req, res) {
 app.listen(PORT, function () {
   console.log("Servidor funcionando en http://localhost:" + PORT);
 });
+                                          
