@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tablero de Resultados</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Tablero de Resultados</h1>
+    <p>
+      Consulta pedagógica de resultados generados a partir de los votos registrados.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Resumen general</h2>
+      <div id="resumenGeneral"></div>
+    </section>
+
+    <section>
+      <h2>Resultados por candidato</h2>
+      <button id="btnCargarTablero" type="button">Cargar tablero</button>
+      <div id="contenedorTablero"></div>
+    </section>
+
+    <section>
+      <a href="votar.html">Ir a votación</a>
+      <br>
+      <a href="index.html">Volver a perfiles</a>
+    </section>
+  </main>
+
+  <script>
+    const btnCargarTablero = document.getElementById("btnCargarTablero");
+    const contenedorTablero = document.getElementById("contenedorTablero");
+    const resumenGeneral = document.getElementById("resumenGeneral");
+
+    btnCargarTablero.addEventListener("click", function () {
+      alert("En el siguiente bloque conectaremos el tablero con el backend.");
+    });
+  </script>
+
+</body>
+</html>
