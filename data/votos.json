@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": 1779849505120,
+    "identificacion": "963",
+    "candidato": "Felipe Martinez",
+    "fecha": "2026-05-27T02:38:25.120Z"
+  },
+  {
+    "id": 1779849514685,
+    "identificacion": "852",
+    "candidato": "Julian Ruales",
+    "fecha": "2026-05-27T02:38:34.685Z"
+  },
+  {
+    "id": 1779849522025,
+    "identificacion": "741",
+    "candidato": "Monica Perez",
+    "fecha": "2026-05-27T02:38:42.025Z"
+  },
+  {
+    "id": 1779849530382,
+    "identificacion": "159",
+    "candidato": "Monica Perez",
+    "fecha": "2026-05-27T02:38:50.382Z"
+  },
+  {
+    "id": 1779849546501,
+    "identificacion": "9514",
+    "candidato": "Camilo Escobar",
+    "fecha": "2026-05-27T02:39:06.501Z"
+  }
+]
