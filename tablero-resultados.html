@@ -38,9 +38,82 @@
     const contenedorTablero = document.getElementById("contenedorTablero");
     const resumenGeneral = document.getElementById("resumenGeneral");
 
-    btnCargarTablero.addEventListener("click", function () {
-      alert("En el siguiente bloque conectaremos el tablero con el backend.");
+    async function cargarDatos() {
+    const respuestaCandidatos = await fetch("/api/candidatos");
+    const candidatos = await respuestaCandidatos.json();
+
+    const respuestaVotos = await fetch("/api/votos");
+    const votos = await respuestaVotos.json();
+
+    return {
+      candidatos: candidatos,
+      votos: votos
+    };
+  }
+
+    function calcularResultados(candidatos, votos) {
+    const resultados = [];
+
+    candidatos.forEach(function (candidato) {
+      const votosDelCandidato = votos.filter(function (voto) {
+        return voto.candidato === candidato.nombre;
+      });
+
+      resultados.push({
+        nombre: candidato.nombre,
+        rol: candidato.rol,
+        propuesta: candidato.propuesta,
+        votos: votosDelCandidato.length
+      });
     });
+
+    return resultados;
+  }
+
+  function calcularTotalVotos(resultados) {
+    let total = 0;
+
+    resultados.forEach(function (resultado) {
+      total = total + resultado.votos;
+    });
+
+    return total;
+  }
+
+  function obtenerGanadorPedagogico(resultados) {
+    let mayor = null;
+
+    resultados.forEach(function (resultado) {
+      if (mayor === null || resultado.votos > mayor.votos) {
+        mayor = resultado;
+      }
+    });
+
+    return mayor;
+  }
+
+  btnCargarTablero.addEventListener("click", async function () {
+    const datos = await cargarDatos();
+    const resultados = calcularResultados(datos.candidatos, datos.votos);
+    const totalVotos = calcularTotalVotos(resultados);
+    const ganador = obtenerGanadorPedagogico(resultados);
+
+    console.log(resultados);
+    console.log("Total de votos:", totalVotos);
+    console.log("Mayor resultado:", ganador);
+
+    resumenGeneral.innerHTML = `
+      <div class="tarjeta-guardada">
+        <p><strong>Total de votos registrados:</strong> ${totalVotos}</p>
+        <p><strong>Mayor resultado:</strong> ${ganador ? ganador.nombre : "Sin votos registrados"}</p>
+      </div>
+    `;
+  });
+
+
+
+  
+
   </script>
 
 </body>
